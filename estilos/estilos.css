@@ -1,0 +1,860 @@
+/*Comentarios generales de la web:
+
+    -La fuente Raleway font-family: 'Raleway', sans-serif;
+    se usa en los headings, call-to-actions, y header en general
+
+    -La fuente Open Sans font-family: 'Open Sans', sans-serif;
+    se usa en todo los demás, ya sea parrafos, grid de comentarios
+    y footer.
+
+    -Colores:
+
+        * Para el primer grid y el contenedor de e-mail
+            Dark Blue (intro and email sign up background): hsl(217, 28%, 15%)
+
+        *Fondo principal 
+            Dark Blue (main background): #1A1F28
+
+        *Fondo pie de página 
+            Dark Blue (footer background): hsl(216, 53%, 9%)
+
+        *Fondo grid testimoniales
+            Dark Blue (testimonials background): hsl(219, 30%, 18%) 
+
+        *Hovers
+            Cyan (inside call-to-action gradient): hsl(176, 68%, 64%)
+            Blue (inside call-to-action gradient): hsl(198, 60%, 50%)
+        
+        *Color neutral
+            White: hsl(0, 0%, 100%)
+*/
+
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  font-size: 14px;
+  background-color: hsl(216, 53%, 9%);
+  color: hsl(0, 0%, 100%);
+  width: 100%;
+  max-width: 1440px;
+  height: 5em;
+}
+
+/*Primer bloque que contiene el header, el menú y el primer grid de intro a la web*/
+.intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "header       header"
+    "contenido    contenido"
+    "contenido    contenido";
+  background-color: hsl(214, 25%, 12%);
+  padding: 25px;
+}
+
+.intro header {
+  grid-area: header;
+  display: flex;
+}
+
+.intro header .logo {
+  position: relative;
+  right: 30em;
+}
+
+.intro .menu ul li {
+  list-style: none;
+  float: left;
+  padding-left: 50px;
+  position: relative;
+  left: 30em;
+}
+
+.intro .menu ul li > a {
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  display: block;
+}
+
+.intro .contenido {
+  position: relative;
+  grid-area: contenido;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro .contenido .intro-img {
+  width: 700px;
+}
+
+.intro .contenido .section-content {
+  width: 15%;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.intro .contenido .section-content h1 {
+  width: 500px;
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  position: absolute;
+  bottom: 10em;
+  padding-left: 100px;
+  padding-right: 100px;
+  z-index: 10000;
+}
+
+.intro .contenido .section-content > p {
+  width: 500px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1em;
+  text-align: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  position: absolute;
+  z-index: 20000;
+}
+
+.intro .contenido .section-content > img {
+  width: 100%;
+  margin-top: 5em;
+  transform: scale(6.9, 7);
+  filter: grayscale(24%) brightness(101%);
+  -webkit-filter: grayscale(24%) brightness(101%);
+  -moz-filter: grayscale(24%) brightness(101%);
+}
+
+.intro .contenido .section-content > a {
+  display: block;
+  width: 180px;
+  background-color: hsl(198, 60%, 50%);
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  margin-top: 1em;
+  padding: 20px 35px 20px 40px;
+  border-radius: 50px;
+  position: absolute;
+  top: 85%;
+}
+
+/*Fin del primer bloque*/
+
+/*Segundo bloque tipo de servicios*/
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "access       security"
+    "real-time    store";
+
+  background-color: hsl(219, 21%, 13%);
+  padding: 25px;
+}
+
+.services .access,
+.services .security,
+.services .real-time,
+.services .store {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.services .access img,
+.services .security img,
+.services .real-time img,
+.services .store img {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+
+.services .access h2,
+.services .security h2,
+.services .real-time h2,
+.services .store h2 {
+  margin-bottom: 0.3em;
+  font-family: "Raleway", sans-serif;
+}
+
+.services .access p,
+.services .security p,
+.services .real-time p,
+.services .store p {
+  text-align: center;
+  margin-left: 175px;
+  margin-right: 175px;
+  line-height: 20px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.services .access {
+  grid-area: access;
+}
+
+.services .security {
+  grid-area: security;
+}
+
+.services .real-time {
+  grid-area: real-time;
+}
+
+.services .store {
+  grid-area: store;
+}
+
+/*Fin del segundo bloque*/
+
+/*Tercer bloque info segundaria*/
+
+.secundaria {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "imagen   info";
+  background-color: hsl(219, 21%, 13%);
+  padding: 40px;
+  position: relative;
+  bottom: 1em;
+}
+
+.secundaria > img {
+  grid-area: imagen;
+}
+
+.secundaria section {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.secundaria section > h2 {
+  font-size: 3em;
+  font-family: "Raleway", sans-serif;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  padding-right: 300px;
+}
+
+.secundaria section article > p {
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+  padding-right: 220px;
+}
+
+.secundaria section article > a {
+  color: hsl(176, 68%, 64%);
+  text-decoration: none;
+}
+
+.secundaria section article > a::after {
+  content: "";
+  width: 9.1em;
+  height: 1px;
+  margin-top: 4px;
+  background: hsl(176, 68%, 64%);
+  display: block;
+}
+
+/*Fin tercer bloque*/
+
+/*Cuarto bloque testimoniales*/
+
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "test1  test2 test3";
+  gap: 30px;
+  background-color: hsl(219, 21%, 13%);
+  padding: 10em 10em 18em 10em;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  bottom: 2em;
+}
+
+.testimonials .profile1,
+.testimonials .profile2,
+.testimonials .profile3 {
+  padding: 40px 25px 10px 25px;
+  background-color: hsl(219, 30%, 18%);
+  word-break: break-all;
+  word-wrap: break-word;
+  border-radius: 5px;
+  box-shadow: 11px 12px 2px hsl(220, 31%, 12%);
+}
+
+.testimonials .profile1 div > img,
+.testimonials .profile2 div > img,
+.testimonials .profile3 div > img {
+  position: relative;
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 1em;
+}
+
+.testimonials .profile1:nth-child(1n)::after,
+.testimonials .profile2:nth-child(1n)::after,
+.testimonials .profile3:nth-child(1n)::after {
+  content: "Founder & CEO, Huddle";
+  font-size: 0.8em;
+  margin-bottom: 2em;
+}
+
+.testimonials .profile1 {
+  grid-area: test1;
+}
+
+.testimonials .profile2 {
+  grid-area: test2;
+}
+
+.testimonials .profile3 {
+  grid-area: test3;
+}
+
+/*Fin cuarto bloque*/
+
+/*Quinto bloque Sign In */
+
+.sign {
+  width: 50%;
+  height: 10em;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "sign";
+  background-color: hsl(217, 28%, 15%);
+  position: relative;
+  bottom: 10em;
+  padding: 35px;
+  padding-bottom: 4em;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px hsl(222, 26%, 7%);
+  z-index: 8888888;
+}
+
+.sign > h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  padding-bottom: 0.7em;
+}
+
+.sign > h2 + p {
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  padding-left: 7em;
+  padding-right: 6.8em;
+  word-break: break-all;
+  margin-bottom: 5em;
+}
+
+.sign > p + input {
+  width: 60%;
+  height: 2.7em;
+  position: absolute;
+  top: 69%;
+  left: 8%;
+  border-radius: 30px;
+}
+
+.sign > p + input:focus {
+  outline: none;
+}
+
+.sign > input + a {
+  position: absolute;
+  left: 72%;
+  top: 61%;
+  display: block;
+  width: 120px;
+  background-color: hsl(198, 60%, 50%);
+  color: hsl(0, 0%, 100%);
+  text-decoration: none;
+  margin-top: 1em;
+  padding: 15px 25px 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/*Fin quinto bloque*/
+
+/*Sexto bloque footer*/
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+    "logo   tel-email   about   contact   socialIcons"
+    "loc    tel-email   about   contact   socialIcons";
+  position: relative;
+  bottom: 14em;
+  margin-top: 10em;
+  margin-bottom: -15em;
+  padding-bottom: -500px;
+  background-color: hsl(216, 53%, 9%);
+}
+
+footer .logo {
+  grid-area: logo;
+  width: 13em;
+  padding-right: 35%;
+}
+
+footer .loc {
+  grid-area: loc;
+  padding-left: 3.2em;
+  display: flex;
+  width: 400px;
+}
+
+footer .loc {
+  grid-area: loc;
+  padding-left: 3.2em;
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+footer .loc .loc-icon {
+  width: 40px;
+}
+
+footer .loc > p {
+  font-family: "Open Sans", sans-serif;
+  word-wrap: break-word;
+  line-height: 1.2em;
+  padding-left: 1em;
+  padding-top: 0.4em;
+}
+
+footer .tel-email {
+  grid-area: tel-email;
+}
+
+footer .tel-email .phone {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+footer .tel-email .phone > p,
+footer .tel-email .mail > p {
+  position: absolute;
+  padding-left: 2em;
+}
+
+footer .tel-email .mail {
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+footer .about {
+  grid-area: about;
+}
+
+footer .about > li,
+footer .contact > li {
+  list-style: none;
+  padding-bottom: 2em;
+}
+
+footer .contact {
+  grid-area: contact;
+}
+
+footer .socialIcons {
+  grid-area: socialIcons;
+}
+
+footer .socialIcons > a {
+  margin-left: 2em;
+}
+
+/*Fin sexto bloque*/
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1024px) {
+  .intro header .logo {
+    position: relative;
+    right: 18em;
+  }
+
+  .intro .menu ul li {
+    list-style: none;
+    float: left;
+    padding-left: 30px;
+    position: relative;
+    left: 17em;
+  }
+
+  .services .access p,
+  .services .security p,
+  .services .real-time p,
+  .services .store p {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    line-height: 20px;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .secundaria section {
+    margin-left: 2em;
+  }
+
+  .secundaria > img {
+    width: 500px;
+  }
+
+  .secundaria section > h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-right: 100px;
+  }
+
+  .secundaria section article > p {
+    font-size: 1em;
+    font-family: "Open Sans", sans-serif;
+    padding-right: 100px;
+  }
+
+  .testimonials .profile1,
+  .testimonials .profile2,
+  .testimonials .profile3 {
+    width: 18em;
+    position: relative;
+    left: -113px;
+  }
+
+  .sign > h2 + p {
+    padding-left: 4em;
+    padding-right: 4em;
+  }
+
+  .sign > p + input {
+    width: 55%;
+    height: 2.7em;
+    position: absolute;
+    top: 69%;
+    left: 6%;
+    border-radius: 30px;
+  }
+
+  .sign > input + a {
+    left: 68%;
+  }
+
+  footer .loc > p {
+    padding-left: 1em;
+    padding-right: 4em;
+  }
+
+  footer .tel-email {
+    padding-right: 10em;
+    margin-left: -4em;
+  }
+
+  footer .tel-email .mail {
+    display: flex;
+    width: 20px;
+    height: 20px;
+  }
+
+  footer .about {
+    margin-left: 0;
+  }
+
+  footer .contact {
+    margin-left: 0;
+  }
+
+  footer .socialIcons {
+    margin-left: -5em;
+    padding-left: 0.5em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .intro {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "contenido";
+  }
+
+  .intro .menu {
+    position: relative;
+  }
+
+  .intro .menu ul li {
+    position: relative;
+    left: 50%;
+    margin-top: 0.5em;
+    padding-left: 3em;
+  }
+
+  .intro header .logo {
+    position: relative;
+    left: -9em;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "access"
+      "security"
+      "real-time"
+      "store";
+    position: relative;
+    bottom: 5.2em;
+  }
+
+  .secundaria {
+    grid-template-columns: 1fr;
+    grid-template-areas: "imagen" "info";
+    position: relative;
+    bottom: 5.3em;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+    grid-template-areas: "test1" "test2" "test3";
+    position: relative;
+    bottom: 5.3em;
+  }
+
+  .testimonials .profile1,
+  .testimonials .profile2,
+  .testimonials .profile3 {
+    width: 640px;
+    margin-left: 1em;
+  }
+
+  .sign {
+    height: 200px;
+  }
+
+  .sign > h2 + p {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  .sign > p + input {
+    width: 90%;
+    height: 2.7em;
+    position: absolute;
+    top: 62%;
+    left: 6%;
+    border-radius: 30px;
+  }
+
+  .sign > input + a {
+    width: 238px;
+    top: 15.3em;
+    left: 6%;
+    padding-top: 11px;
+    padding-left: 152px;
+    padding-bottom: 11px;
+  }
+
+  footer .logo {
+    width: 11em;
+    padding-right: 35%;
+  }
+
+  footer .tel-email {
+    padding-right: 10em;
+    margin-left: -9em;
+  }
+
+  footer .about {
+    margin-left: -2.5em;
+  }
+
+  footer .contact {
+    margin-left: -2.1em;
+  }
+
+  footer .socialIcons {
+    margin-left: -3em;
+    padding-left: 0.5em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .intro {
+    min-width: 500px;
+    margin-left: 1em;
+  }
+
+  .intro .menu {
+    position: relative;
+    left: -15%;
+  }
+
+  .intro .contenido .intro-img {
+    width: 450px;
+  }
+
+  .intro .contenido .section-content > h1 {
+    width: 425px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .intro .contenido .section-content > p {
+    width: 425px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .intro .contenido .section-content > img {
+    width: 150px;
+    position: relative;
+    left: -25em;
+  }
+
+  .intro header .logo {
+    width: 150px;
+    position: relative;
+    left: -1em;
+  }
+
+  .intro .menu ul li {
+    position: relative;
+    left: 37%;
+  }
+
+  .services {
+    min-width: 500px;
+    margin-top: 4em;
+    margin-left: 1em;
+  }
+
+  .secundaria {
+    min-width: 480px;
+  }
+
+  .secundaria > img {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .secundaria section h2 {
+    width: 400px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .secundaria section article > p {
+    width: 400px;
+    margin: 0;
+    margin-top: 1.5em;
+    padding: 0;
+  }
+
+  .secundaria section article > a {
+    margin-right: 2em;
+    padding-left: 0em;
+  }
+
+  .testimonials {
+    width: 280px;
+  }
+
+  .testimonials .profile1,
+  .testimonials .profile2,
+  .testimonials .profile3 {
+    width: 440px;
+    margin-left: 0em;
+  }
+
+  .sign {
+    width: 100%;
+    margin: 0 auto 0 6%;
+  }
+
+  .sign > input {
+    width: 10px;
+  }
+
+  .sign > input + a {
+    width: 260px;
+    padding-left: 166px;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "loc"
+      "tel-email"
+      "about"
+      "contact"
+      "socialIcons";
+    width: 100%;
+  }
+
+  footer .loc {
+    width: 100%;
+  }
+
+  footer .loc .loc-icon {
+    width: 300px;
+  }
+
+  footer .loc > p {
+    font-size: 1.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+    padding-left: 0;
+  }
+
+  footer .tel-email {
+    margin-top: 2em;
+    margin-left: 3em;
+    font-size: 1.5em;
+  }
+
+  footer .about,
+  footer .contact {
+    font-size: 1.5em;
+    margin-top: 2.5em;
+    margin-left: 2.5em;
+  }
+
+  footer .socialIcons {
+    margin-left: 13em;
+    margin-bottom: 2em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .sign {
+    margin-left: 27px;
+    width: 31em;
+  }
+
+  .sign > input + a {
+    width: 267px;
+  }
+}
+
+/*FIN MEDIA QUERIES*/
